@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.2.2 (Python 3.6.7 on win32)" generated="20201002 11:37:49.377" rpa="false">
+<suite id="s1" name="LearningProject" source="C:\My_Stuff\LearningProject">
+<suite id="s1-s1" name="Scripts" source="C:\My_Stuff\LearningProject\Scripts">
+<suite id="s1-s1-s1" name="Suite1" source="C:\My_Stuff\LearningProject\Scripts\Suite1.robot">
+<test id="s1-s1-s1-t1" name="Create Job">
+<kw name="Login To Application" library="Keyword.robot">
+<arguments>
+<arg>https://dev2.geekassess.com/</arg>
+<arg>drongarg+1@gmail.com</arg>
+<arg>Yeknod@123</arg>
+</arguments>
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${url}</arg>
+<arg>chrome</arg>
+<arg>options=add_argument("disable-infobars"); add_argument("--ignore-certificate-errors")</arg>
+</arguments>
+<msg timestamp="20201002 11:37:49.654" level="INFO">Opening browser 'chrome' to base url 'https://dev2.geekassess.com/'.</msg>
+<status status="PASS" starttime="20201002 11:37:49.654" endtime="20201002 11:37:57.455"></status>
+</kw>
+<kw name="Set Browser Implicit Wait" library="SeleniumLibrary">
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<arguments>
+<arg>8s</arg>
+</arguments>
+<status status="PASS" starttime="20201002 11:37:57.456" endtime="20201002 11:37:57.458"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20201002 11:37:57.459" endtime="20201002 11:37:59.632"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${input_username}</arg>
+<arg>${username}</arg>
+</arguments>
+<msg timestamp="20201002 11:37:59.634" level="INFO">Typing text 'drongarg+1@gmail.com' into text field '//input[@id='login_emailOrMobile']'.</msg>
+<status status="PASS" starttime="20201002 11:37:59.633" endtime="20201002 11:37:59.862"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${input_password}</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20201002 11:37:59.863" level="INFO">Typing text 'Yeknod@123' into text field '//input[@id='login_password']'.</msg>
+<status status="PASS" starttime="20201002 11:37:59.862" endtime="20201002 11:37:59.976"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3s</arg>
+</arguments>
+<msg timestamp="20201002 11:38:02.984" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20201002 11:37:59.976" endtime="20201002 11:38:02.984"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${btn_login}</arg>
+</arguments>
+<msg timestamp="20201002 11:38:02.987" level="INFO">Clicking element '//button[@type='submit']'.</msg>
+<status status="PASS" starttime="20201002 11:38:02.987" endtime="20201002 11:38:03.117"></status>
+</kw>
+<status status="PASS" starttime="20201002 11:37:49.653" endtime="20201002 11:38:03.117"></status>
+</kw>
+<kw name="Create Job" library="Keyword.robot">
+<arguments>
+<arg>TestCompany5</arg>
+<arg>Job1</arg>
+<arg>On Contract</arg>
+<arg>Job Description Goes Here</arg>
+<arg>Selenium</arg>
+<arg>Bengaluru</arg>
+<arg>0-2</arg>
+<arg>Btech</arg>
+<arg>Animation</arg>
+</arguments>
+<assign>
+<var>${jobTitle}</var>
+</assign>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${menu_Dashboard_Jobs}</arg>
+</arguments>
+<msg timestamp="20201002 11:38:03.118" level="INFO">Clicking element '//a[@href='/web/jobs']'.</msg>
+<status status="PASS" starttime="20201002 11:38:03.118" endtime="20201002 11:38:03.821"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${Company_button_Create}</arg>
+</arguments>
+<msg timestamp="20201002 11:38:03.822" level="INFO">Clicking element '//button[@class='ant-btn ant-btn-primary ant-btn-lg']'.</msg>
+<status status="PASS" starttime="20201002 11:38:03.821" endtime="20201002 11:38:04.789"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>Click Element</arg>
+<arg>${Create_Company}</arg>
+</arguments>
+<status status="PASS" starttime="20201002 11:38:04.789" endtime="20201002 11:38:04.790"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2s</arg>
+</arguments>
+<msg timestamp="20201002 11:38:06.794" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20201002 11:38:04.791" endtime="20201002 11:38:06.794"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${jobs_dropdown_company}</arg>
+</arguments>
+<msg timestamp="20201002 11:38:06.797" level="INFO">Clicking element '//div[contains(text(),'Type company name to select')]'.</msg>
+<status status="PASS" starttime="20201002 11:38:06.796" endtime="20201002 11:38:06.911"></status>
+</kw>
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>SEPARATOR=</arg>
+<arg>//li[contains(text(),'</arg>
+<arg>${companyName}</arg>
+<arg>')]</arg>
+</arguments>
+<assign>
+<var>${company_Name1}</var>
+</assign>
+<msg timestamp="20201002 11:38:06.912" level="INFO">${company_Name1} = //li[contains(text(),'TestCompany5')]</msg>
+<status status="PASS" starttime="20201002 11:38:06.911" endtime="20201002 11:38:06.912"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${company_Name1}</arg>
+</arguments>
+<msg timestamp="20201002 11:38:06.913" level="INFO">Clicking element '//li[contains(text(),'TestCompany5')]'.</msg>
+<status status="PASS" starttime="20201002 11:38:06.912" endtime="20201002 11:38:07.033"></status>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<arguments>
+<arg>20s</arg>
+<arg>10s</arg>
+<arg>Click Element</arg>
+<arg>${Jobs_btn_Next1}</arg>
+</arguments>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${Jobs_btn_Next1}</arg>
+</arguments>
+<msg timestamp="20201002 11:38:07.035" level="INFO">Clicking element '//button[@type='submit']/span[contains(text(),'Next')]/..'.</msg>
+<status status="PASS" starttime="20201002 11:38:07.034" endtime="20201002 11:38:07.184"></status>
+</kw>
+<status status="PASS" starttime="20201002 11:38:07.033" endtime="20201002 11:38:07.184"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${jobs_input_jobTitle}</arg>
+<arg>${jobTitle}</arg>
+</arguments>
+<msg timestamp="20201002 11:38:07.186" level="INFO">Typing text 'Job1' into text field '//input[@id='step_two_title']'.</msg>
+<status status="PASS" starttime="20201002 11:38:07.185" endtime="20201002 11:38:07.352"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${jobs_input_jobType}</arg>
+</arguments>
+<msg timestamp="20201002 11:38:07.354" level="INFO">Clicking element '//label[contains(text(),'Type')]/../../div[2]/div/span'.</msg>
+<status status="PASS" starttime="20201002 11:38:07.353" endtime="20201002 11:38:07.412"></status>
+</kw>
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>SEPARATOR=</arg>
+<arg>//li[contains(text(),'</arg>
+<arg>${jobType}</arg>
+<arg>')]</arg>
+</arguments>
+<assign>
+<var>${jobType1}</var>
+</assign>
+<msg timestamp="20201002 11:38:07.413" level="INFO">${jobType1} = //li[contains(text(),'On Contract')]</msg>
+<status status="PASS" starttime="20201002 11:38:07.413" endtime="20201002 11:38:07.413"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${jobType1}</arg>
+</arguments>
+<msg timestamp="20201002 11:38:07.414" level="INFO">Clicking element '//li[contains(text(),'On Contract')]'.</msg>
+<status status="PASS" starttime="20201002 11:38:07.414" endtime="20201002 11:38:07.659"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${Company_aboutCompany}</arg>
+</arguments>
+<msg timestamp="20201002 11:38:07.660" level="INFO">Clicking element '//div[@class='ql-editor ql-blank']'.</msg>
+<status status="PASS" starttime="20201002 11:38:07.660" endtime="20201002 11:38:07.717"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${Company_aboutCompany}</arg>
+<arg>${jobDescription}</arg>
+</arguments>
+<msg timestamp="20201002 11:38:07.718" level="INFO">Typing text 'Job Description Goes Here' into text field '//div[@class='ql-editor ql-blank']'.</msg>
+<status status="PASS" starttime="20201002 11:38:07.718" endtime="20201002 11:38:08.378"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${jobs_input_jobSkills}</arg>
+<arg>${jobSkills}</arg>
+</arguments>
+<msg timestamp="20201002 11:38:08.379" level="INFO">Typing text 'Selenium' into text field '//input[@id='step_two_skillSet']'.</msg>
+<status status="PASS" starttime="20201002 11:38:08.378" endtime="20201002 11:38:08.526"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${jobs_input_workLocation}</arg>
+<arg>${jobWorkLoc}</arg>
+</arguments>
+<msg timestamp="20201002 11:38:08.527" level="INFO">Typing text 'Bengaluru' into text field '//label[contains(text(),'Work Location')]/../..//input'.</msg>
+<status status="PASS" starttime="20201002 11:38:08.527" endtime="20201002 11:38:08.767"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2s</arg>
+</arguments>
+<msg timestamp="20201002 11:38:10.774" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20201002 11:38:08.767" endtime="20201002 11:38:10.775"></status>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<arguments>
+<arg>${jobs_input_workLocation}</arg>
+<arg>ENTER</arg>
+</arguments>
+<msg timestamp="20201002 11:38:10.780" level="INFO">Sending key(s) ('ENTER',) to //label[contains(text(),'Work Location')]/../..//input element.</msg>
+<msg timestamp="20201002 11:38:11.095" level="INFO">Pressing special key ENTER to element.</msg>
+<msg timestamp="20201002 11:38:11.095" level="INFO">Releasing special key ENTER.</msg>
+<status status="PASS" starttime="20201002 11:38:10.776" endtime="20201002 11:38:11.146"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${jobs_input_experience}</arg>
+<arg>${jobExperience}</arg>
+</arguments>
+<msg timestamp="20201002 11:38:11.149" level="INFO">Typing text '0-2' into text field '//input[@id='step_two_experienceRange']'.</msg>
+<status status="PASS" starttime="20201002 11:38:11.147" endtime="20201002 11:38:11.350"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${jobs_input_Education}</arg>
+<arg>${jobEducation}</arg>
+</arguments>
+<msg timestamp="20201002 11:38:11.350" level="INFO">Typing text 'Btech' into text field '//input[@id='step_two_educationalQualification']'.</msg>
+<status status="PASS" starttime="20201002 11:38:11.350" endtime="20201002 11:38:11.517"></status>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<arguments>
+<arg>20s</arg>
+<arg>10s</arg>
+<arg>Click Element</arg>
+<arg>${Company_drowpdown_Industry}</arg>
+</arguments>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${Company_drowpdown_Industry}</arg>
+</arguments>
+<msg timestamp="20201002 11:38:11.519" level="INFO">Clicking element '//div[contains(text(),'Please select a industry')]'.</msg>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20201002 11:38:19.933" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-13.png"&gt;&lt;img src="selenium-screenshot-13.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20201002 11:38:19.591" endtime="20201002 11:38:19.933"></status>
+</kw>
+<msg timestamp="20201002 11:38:19.937" level="FAIL">ElementNotInteractableException: Message: element not interactable
+  (Session info: chrome=85.0.4183.121)
+</msg>
+<status status="FAIL" starttime="20201002 11:38:11.518" endtime="20201002 11:38:19.937"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${Company_drowpdown_Industry}</arg>
+</arguments>
+<msg timestamp="20201002 11:38:29.946" level="INFO">Clicking element '//div[contains(text(),'Please select a industry')]'.</msg>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20201002 11:38:38.361" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-14.png"&gt;&lt;img src="selenium-screenshot-14.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20201002 11:38:38.042" endtime="20201002 11:38:38.361"></status>
+</kw>
+<msg timestamp="20201002 11:38:38.362" level="FAIL">ElementNotInteractableException: Message: element not interactable
+  (Session info: chrome=85.0.4183.121)
+</msg>
+<status status="FAIL" starttime="20201002 11:38:29.944" endtime="20201002 11:38:38.362"></status>
+</kw>
+<msg timestamp="20201002 11:38:38.364" level="FAIL">Keyword 'Click Element' failed after retrying for 20 seconds. The last error was: ElementNotInteractableException: Message: element not interactable
+  (Session info: chrome=85.0.4183.121)
+</msg>
+<status status="FAIL" starttime="20201002 11:38:11.518" endtime="20201002 11:38:38.364"></status>
+</kw>
+<status status="FAIL" starttime="20201002 11:38:03.118" endtime="20201002 11:38:38.364"></status>
+</kw>
+<status status="FAIL" starttime="20201002 11:37:49.652" endtime="20201002 11:38:38.364" critical="yes">Keyword 'Click Element' failed after retrying for 20 seconds. The last error was: ElementNotInteractableException: Message: element not interactable
+  (Session info: chrome=85.0.4183.121)
+</status>
+</test>
+<status status="FAIL" starttime="20201002 11:37:49.427" endtime="20201002 11:38:38.365"></status>
+</suite>
+<status status="FAIL" starttime="20201002 11:37:49.425" endtime="20201002 11:38:38.369"></status>
+</suite>
+<status status="FAIL" starttime="20201002 11:37:49.400" endtime="20201002 11:38:38.375"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1">Critical Tests</stat>
+<stat pass="0" fail="1">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" id="s1" name="LearningProject">LearningProject</stat>
+<stat pass="0" fail="1" id="s1-s1" name="Scripts">LearningProject.Scripts</stat>
+<stat pass="0" fail="1" id="s1-s1-s1" name="Suite1">LearningProject.Scripts.Suite1</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

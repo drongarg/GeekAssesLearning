@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.2.2 (Python 3.6.7 on win32)" generated="20201010 17:28:18.897" rpa="false">
+<suite id="s1" name="LearningProject" source="C:\My_Stuff\LearningProject">
+<suite id="s1-s1" name="Scripts" source="C:\My_Stuff\LearningProject\Scripts">
+<suite id="s1-s1-s1" name="Candidate" source="C:\My_Stuff\LearningProject\Scripts\Candidate.robot">
+<test id="s1-s1-s1-t1" name="To Add Candidate From Create Button Multiple Candidate">
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>Login To Application</arg>
+</arguments>
+<status status="PASS" starttime="20201010 17:28:19.666" endtime="20201010 17:28:19.667"></status>
+</kw>
+<kw name="RowNumber" library="Keyword.robot">
+<arguments>
+<arg>${ExcelPath}</arg>
+<arg>${SheetName}</arg>
+</arguments>
+<assign>
+<var>${rownum}</var>
+</assign>
+<kw name="Open Excel" library="ExcelRobot">
+<doc>Opens the Excel file to read from the path provided in the file path parameter.</doc>
+<arguments>
+<arg>${Excel_Name}</arg>
+</arguments>
+<msg timestamp="20201010 17:28:19.668" level="INFO">Opening file at C:\My_Stuff\LearningProject\Data/MasterData.xlsx</msg>
+<status status="PASS" starttime="20201010 17:28:19.667" endtime="20201010 17:28:19.674"></status>
+</kw>
+<kw name="Get Row Count" library="ExcelRobot">
+<doc>Returns the specific number of rows of the sheet name specified.</doc>
+<arguments>
+<arg>${sheetname}</arg>
+</arguments>
+<assign>
+<var>${rownum}</var>
+</assign>
+<msg timestamp="20201010 17:28:19.675" level="INFO">${rownum} = 21</msg>
+<status status="PASS" starttime="20201010 17:28:19.674" endtime="20201010 17:28:19.675"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${rownum}</arg>
+</arguments>
+<status status="PASS" starttime="20201010 17:28:19.675" endtime="20201010 17:28:19.676"></status>
+</kw>
+<msg timestamp="20201010 17:28:19.676" level="INFO">${rownum} = 21</msg>
+<status status="PASS" starttime="20201010 17:28:19.667" endtime="20201010 17:28:19.676"></status>
+</kw>
+<kw name="${i} IN RANGE [ 1 | 3 ]" type="for">
+<kw name="${i} = 1" type="foritem">
+<kw name="ExcelReading" library="Keyword.robot">
+<arguments>
+<arg>${ExcelPath}</arg>
+<arg>0</arg>
+<arg>${i}</arg>
+<arg>${SheetName}</arg>
+</arguments>
+<assign>
+<var>${status}</var>
+</assign>
+<kw name="Open Excel" library="ExcelRobot">
+<doc>Opens the Excel file to read from the path provided in the file path parameter.</doc>
+<arguments>
+<arg>${Excel_Name}</arg>
+</arguments>
+<msg timestamp="20201010 17:28:19.679" level="INFO">Opening file at C:\My_Stuff\LearningProject\Data/MasterData.xlsx</msg>
+<status status="PASS" starttime="20201010 17:28:19.678" endtime="20201010 17:28:19.682"></status>
+</kw>
+<kw name="Read Cell Data" library="ExcelRobot">
+<doc>Uses the column and row to return the data from that cell.</doc>
+<arguments>
+<arg>${sheetname}</arg>
+<arg>${column_no}</arg>
+<arg>${row_no}</arg>
+</arguments>
+<assign>
+<var>${value}</var>
+</assign>
+<msg timestamp="20201010 17:28:19.683" level="INFO">${value} = New</msg>
+<status status="PASS" starttime="20201010 17:28:19.683" endtime="20201010 17:28:19.683"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${value}</arg>
+</arguments>
+<status status="PASS" starttime="20201010 17:28:19.683" endtime="20201010 17:28:19.684"></status>
+</kw>
+<msg timestamp="20201010 17:28:19.684" level="INFO">${status} = New</msg>
+<status status="PASS" starttime="20201010 17:28:19.678" endtime="20201010 17:28:19.684"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${status}'=='New'</arg>
+<arg>Run Keywords</arg>
+<arg>${candidateName}=</arg>
+<arg>ExcelReading</arg>
+<arg>${ExcelPath}</arg>
+<arg>1</arg>
+<arg>${i}</arg>
+<arg>${SheetName}</arg>
+<arg>AND</arg>
+<arg>${candidateEmail}=</arg>
+<arg>ExcelReading</arg>
+<arg>${ExcelPath}</arg>
+<arg>2</arg>
+<arg>${i}</arg>
+<arg>${SheetName}</arg>
+<arg>AND</arg>
+<arg>${candidateMobile}=</arg>
+<arg>ExcelReading</arg>
+<arg>${ExcelPath}</arg>
+<arg>3</arg>
+<arg>${i}</arg>
+<arg>${SheetName}</arg>
+<arg>AND</arg>
+<arg>${CandidateResume}</arg>
+<arg>ExcelReading</arg>
+<arg>${ExcelPath}</arg>
+<arg>4</arg>
+<arg>${i}</arg>
+<arg>${SheetName}</arg>
+<arg>ELSE</arg>
+<arg>Continue For Loop</arg>
+</arguments>
+<kw name="Run Keywords" library="BuiltIn">
+<doc>Executes all the given keywords in a sequence.</doc>
+<arguments>
+<arg>${candidateName}=</arg>
+<arg>ExcelReading</arg>
+<arg>${ExcelPath}</arg>
+<arg>1</arg>
+<arg>${i}</arg>
+<arg>${SheetName}</arg>
+<arg>AND</arg>
+<arg>${candidateEmail}=</arg>
+<arg>ExcelReading</arg>
+<arg>${ExcelPath}</arg>
+<arg>2</arg>
+<arg>${i}</arg>
+<arg>${SheetName}</arg>
+<arg>AND</arg>
+<arg>${candidateMobile}=</arg>
+<arg>ExcelReading</arg>
+<arg>${ExcelPath}</arg>
+<arg>3</arg>
+<arg>${i}</arg>
+<arg>${SheetName}</arg>
+<arg>AND</arg>
+<arg>${CandidateResume}</arg>
+<arg>ExcelReading</arg>
+<arg>${ExcelPath}</arg>
+<arg>4</arg>
+<arg>${i}</arg>
+<arg>${SheetName}</arg>
+</arguments>
+<kw name="=">
+<arguments>
+<arg>ExcelReading</arg>
+<arg>${ExcelPath}</arg>
+<arg>1</arg>
+<arg>${i}</arg>
+<arg>${SheetName}</arg>
+</arguments>
+<msg timestamp="20201010 17:28:19.686" level="FAIL">No keyword with name '=' found.</msg>
+<status status="FAIL" starttime="20201010 17:28:19.686" endtime="20201010 17:28:19.686"></status>
+</kw>
+<status status="FAIL" starttime="20201010 17:28:19.685" endtime="20201010 17:28:19.689"></status>
+</kw>
+<status status="FAIL" starttime="20201010 17:28:19.684" endtime="20201010 17:28:19.689"></status>
+</kw>
+<status status="FAIL" starttime="20201010 17:28:19.678" endtime="20201010 17:28:19.689"></status>
+</kw>
+<status status="FAIL" starttime="20201010 17:28:19.676" endtime="20201010 17:28:19.689"></status>
+</kw>
+<status status="FAIL" starttime="20201010 17:28:19.665" endtime="20201010 17:28:19.689" critical="yes">No keyword with name '=' found.</status>
+</test>
+<status status="FAIL" starttime="20201010 17:28:18.956" endtime="20201010 17:28:19.690"></status>
+</suite>
+<status status="FAIL" starttime="20201010 17:28:18.941" endtime="20201010 17:28:19.691"></status>
+</suite>
+<status status="FAIL" starttime="20201010 17:28:18.923" endtime="20201010 17:28:19.693"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1">Critical Tests</stat>
+<stat pass="0" fail="1">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" id="s1" name="LearningProject">LearningProject</stat>
+<stat pass="0" fail="1" id="s1-s1" name="Scripts">LearningProject.Scripts</stat>
+<stat pass="0" fail="1" id="s1-s1-s1" name="Candidate">LearningProject.Scripts.Candidate</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

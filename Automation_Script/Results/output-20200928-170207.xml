@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.2.2 (Python 3.6.7 on win32)" generated="20200928 17:02:07.138" rpa="false">
+<suite id="s1" name="ProjectForCMC" source="C:\My_Stuff\LearningProject\ProjectForCMC.robot">
+<test id="s1-t1" name="TestCase_Biologics">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>https://cmc-editorial.dev-snapshot.cc.clarivate.com/cmc/</arg>
+<arg>chrome</arg>
+</arguments>
+<msg timestamp="20200928 17:02:07.344" level="INFO">Opening browser 'chrome' to base url 'https://cmc-editorial.dev-snapshot.cc.clarivate.com/cmc/'.</msg>
+<status status="PASS" starttime="20200928 17:02:07.343" endtime="20200928 17:02:14.286"></status>
+</kw>
+<kw name="Set Browser Implicit Wait" library="SeleniumLibrary">
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<arguments>
+<arg>8s</arg>
+</arguments>
+<status status="PASS" starttime="20200928 17:02:14.288" endtime="20200928 17:02:14.291"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>//input[@name='username']</arg>
+<arg>Dron</arg>
+</arguments>
+<msg timestamp="20200928 17:02:14.292" level="INFO">Typing text 'Dron' into text field '//input[@name='username']'.</msg>
+<status status="PASS" starttime="20200928 17:02:14.291" endtime="20200928 17:02:14.431"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>//input[@name='password']</arg>
+<arg>Test@123</arg>
+</arguments>
+<msg timestamp="20200928 17:02:14.432" level="INFO">Typing text 'Test@123' into text field '//input[@name='password']'.</msg>
+<status status="PASS" starttime="20200928 17:02:14.431" endtime="20200928 17:02:14.601"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>//input[@type='submit']</arg>
+</arguments>
+<msg timestamp="20200928 17:02:14.602" level="INFO">Clicking element '//input[@type='submit']'.</msg>
+<status status="PASS" starttime="20200928 17:02:14.602" endtime="20200928 17:02:16.656"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>//a[contains(text(),'Detailed Requirements - Biologics')]</arg>
+</arguments>
+<msg timestamp="20200928 17:02:16.656" level="INFO">Clicking element '//a[contains(text(),'Detailed Requirements - Biologics')]'.</msg>
+<status status="PASS" starttime="20200928 17:02:16.656" endtime="20200928 17:02:21.344"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>//a[contains(text(),'Add Detailed Requirement - Biologics')]</arg>
+</arguments>
+<msg timestamp="20200928 17:02:21.346" level="INFO">Clicking element '//a[contains(text(),'Add Detailed Requirement - Biologics')]'.</msg>
+<status status="PASS" starttime="20200928 17:02:21.345" endtime="20200928 17:02:24.962"></status>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<arguments>
+<arg>//form[@id='descriptiverequirementbiologics_form']/div/fieldset/div[5]//label</arg>
+</arguments>
+<assign>
+<var>${label_text}</var>
+</assign>
+<msg timestamp="20200928 17:02:24.991" level="INFO">${label_text} = Common Practice:</msg>
+<status status="PASS" starttime="20200928 17:02:24.963" endtime="20200928 17:02:24.991"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>Should Be Equal</arg>
+<arg>${label_text}</arg>
+<arg>Local Practice</arg>
+<arg>It is coming as ${label_text}</arg>
+</arguments>
+<status status="PASS" starttime="20200928 17:02:24.992" endtime="20200928 17:02:24.992"></status>
+</kw>
+<kw name="Select Frame" library="SeleniumLibrary">
+<doc>Sets frame identified by ``locator`` as the current frame.</doc>
+<arguments>
+<arg>//form[@id='descriptiverequirementbiologics_form']/div/fieldset/div[5]//label</arg>
+</arguments>
+<msg timestamp="20200928 17:02:24.993" level="INFO">Selecting frame '//form[@id='descriptiverequirementbiologics_form']/div/fieldset/div[5]//label'.</msg>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20200928 17:02:25.300" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-7.png"&gt;&lt;img src="selenium-screenshot-7.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20200928 17:02:25.016" endtime="20200928 17:02:25.300"></status>
+</kw>
+<msg timestamp="20200928 17:02:25.308" level="FAIL">NoSuchFrameException: Message: no such frame: element is not a frame
+  (Session info: chrome=85.0.4183.121)
+</msg>
+<status status="FAIL" starttime="20200928 17:02:24.992" endtime="20200928 17:02:25.308"></status>
+</kw>
+<status status="FAIL" starttime="20200928 17:02:07.342" endtime="20200928 17:02:25.309" critical="yes">NoSuchFrameException: Message: no such frame: element is not a frame
+  (Session info: chrome=85.0.4183.121)
+</status>
+</test>
+<status status="FAIL" starttime="20200928 17:02:07.162" endtime="20200928 17:02:25.309"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1">Critical Tests</stat>
+<stat pass="0" fail="1">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" id="s1" name="ProjectForCMC">ProjectForCMC</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

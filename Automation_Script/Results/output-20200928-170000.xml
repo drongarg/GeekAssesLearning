@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.2.2 (Python 3.6.7 on win32)" generated="20200928 17:00:00.076" rpa="false">
+<suite id="s1" name="ProjectForCMC" source="C:\My_Stuff\LearningProject\ProjectForCMC.robot">
+<test id="s1-t1" name="TestCase_Biologics">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>https://cmc-editorial.dev-snapshot.cc.clarivate.com/cmc/</arg>
+<arg>chrome</arg>
+</arguments>
+<msg timestamp="20200928 17:00:00.281" level="INFO">Opening browser 'chrome' to base url 'https://cmc-editorial.dev-snapshot.cc.clarivate.com/cmc/'.</msg>
+<status status="PASS" starttime="20200928 17:00:00.279" endtime="20200928 17:00:06.847"></status>
+</kw>
+<kw name="Set Browser Implicit Wait" library="SeleniumLibrary">
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<arguments>
+<arg>8s</arg>
+</arguments>
+<status status="PASS" starttime="20200928 17:00:06.848" endtime="20200928 17:00:06.849"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>//input[@name='username']</arg>
+<arg>Dron</arg>
+</arguments>
+<msg timestamp="20200928 17:00:06.850" level="INFO">Typing text 'Dron' into text field '//input[@name='username']'.</msg>
+<status status="PASS" starttime="20200928 17:00:06.850" endtime="20200928 17:00:06.927"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>//input[@name='password']</arg>
+<arg>Test@123</arg>
+</arguments>
+<msg timestamp="20200928 17:00:06.927" level="INFO">Typing text 'Test@123' into text field '//input[@name='password']'.</msg>
+<status status="PASS" starttime="20200928 17:00:06.927" endtime="20200928 17:00:07.008"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>//input[@type='submit']</arg>
+</arguments>
+<msg timestamp="20200928 17:00:07.009" level="INFO">Clicking element '//input[@type='submit']'.</msg>
+<status status="PASS" starttime="20200928 17:00:07.008" endtime="20200928 17:00:08.686"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>//a[contains(text(),'Detailed Requirements - Biologics')]</arg>
+</arguments>
+<msg timestamp="20200928 17:00:08.688" level="INFO">Clicking element '//a[contains(text(),'Detailed Requirements - Biologics')]'.</msg>
+<status status="PASS" starttime="20200928 17:00:08.687" endtime="20200928 17:00:12.328"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>//a[contains(text(),'Add Detailed Requirement - Biologics')]</arg>
+</arguments>
+<msg timestamp="20200928 17:00:12.329" level="INFO">Clicking element '//a[contains(text(),'Add Detailed Requirement - Biologics')]'.</msg>
+<status status="PASS" starttime="20200928 17:00:12.328" endtime="20200928 17:00:15.570"></status>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<arguments>
+<arg>//form[@id='descriptive_requirement_form']/div/fieldset/div[5]//label</arg>
+</arguments>
+<assign>
+<var>${label_text}</var>
+</assign>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20200928 17:00:23.956" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-6.png"&gt;&lt;img src="selenium-screenshot-6.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20200928 17:00:23.637" endtime="20200928 17:00:23.956"></status>
+</kw>
+<msg timestamp="20200928 17:00:23.962" level="FAIL">Element with locator '//form[@id='descriptive_requirement_form']/div/fieldset/div[5]//label' not found.</msg>
+<status status="FAIL" starttime="20200928 17:00:15.571" endtime="20200928 17:00:23.963"></status>
+</kw>
+<status status="FAIL" starttime="20200928 17:00:00.279" endtime="20200928 17:00:23.963" critical="yes">Element with locator '//form[@id='descriptive_requirement_form']/div/fieldset/div[5]//label' not found.</status>
+</test>
+<status status="FAIL" starttime="20200928 17:00:00.103" endtime="20200928 17:00:23.963"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1">Critical Tests</stat>
+<stat pass="0" fail="1">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" id="s1" name="ProjectForCMC">ProjectForCMC</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.2.2 (Python 3.6.7 on win32)" generated="20201010 17:26:45.817" rpa="false">
+<suite id="s1" name="LearningProject" source="C:\My_Stuff\LearningProject">
+<suite id="s1-s1" name="Scripts" source="C:\My_Stuff\LearningProject\Scripts">
+<suite id="s1-s1-s1" name="Candidate" source="C:\My_Stuff\LearningProject\Scripts\Candidate.robot">
+<test id="s1-s1-s1-t1" name="To Add Candidate From Create Button Multiple Candidate">
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>Login To Application</arg>
+</arguments>
+<status status="PASS" starttime="20201010 17:26:46.600" endtime="20201010 17:26:46.601"></status>
+</kw>
+<kw name="RowNumber" library="Keyword.robot">
+<arguments>
+<arg>${ExcelPath}</arg>
+<arg>${SheetName}</arg>
+</arguments>
+<assign>
+<var>${rownum}</var>
+</assign>
+<kw name="Open Excel" library="ExcelRobot">
+<doc>Opens the Excel file to read from the path provided in the file path parameter.</doc>
+<arguments>
+<arg>${Excel_Name}</arg>
+</arguments>
+<msg timestamp="20201010 17:26:46.602" level="INFO">Opening file at C:\My_Stuff\LearningProject\Data/MasterData.xlsx</msg>
+<status status="PASS" starttime="20201010 17:26:46.602" endtime="20201010 17:26:46.608"></status>
+</kw>
+<kw name="Get Row Count" library="ExcelRobot">
+<doc>Returns the specific number of rows of the sheet name specified.</doc>
+<arguments>
+<arg>${sheetname}</arg>
+</arguments>
+<assign>
+<var>${rownum}</var>
+</assign>
+<msg timestamp="20201010 17:26:46.610" level="INFO">${rownum} = 21</msg>
+<status status="PASS" starttime="20201010 17:26:46.610" endtime="20201010 17:26:46.610"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${rownum}</arg>
+</arguments>
+<status status="PASS" starttime="20201010 17:26:46.611" endtime="20201010 17:26:46.611"></status>
+</kw>
+<msg timestamp="20201010 17:26:46.611" level="INFO">${rownum} = 21</msg>
+<status status="PASS" starttime="20201010 17:26:46.601" endtime="20201010 17:26:46.612"></status>
+</kw>
+<kw name="${i} IN RANGE [ 1 | 3 ]" type="for">
+<kw name="${i} = 1" type="foritem">
+<kw name="ExcelReading" library="Keyword.robot">
+<arguments>
+<arg>${ExcelPath}</arg>
+<arg>0</arg>
+<arg>${i}</arg>
+<arg>${SheetName}</arg>
+</arguments>
+<assign>
+<var>${status}</var>
+</assign>
+<kw name="Open Excel" library="ExcelRobot">
+<doc>Opens the Excel file to read from the path provided in the file path parameter.</doc>
+<arguments>
+<arg>${Excel_Name}</arg>
+</arguments>
+<msg timestamp="20201010 17:26:46.613" level="INFO">Opening file at C:\My_Stuff\LearningProject\Data/MasterData.xlsx</msg>
+<status status="PASS" starttime="20201010 17:26:46.612" endtime="20201010 17:26:46.618"></status>
+</kw>
+<kw name="Read Cell Data" library="ExcelRobot">
+<doc>Uses the column and row to return the data from that cell.</doc>
+<arguments>
+<arg>${sheetname}</arg>
+<arg>${column_no}</arg>
+<arg>${row_no}</arg>
+</arguments>
+<assign>
+<var>${value}</var>
+</assign>
+<msg timestamp="20201010 17:26:46.619" level="INFO">${value} = New</msg>
+<status status="PASS" starttime="20201010 17:26:46.618" endtime="20201010 17:26:46.619"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${value}</arg>
+</arguments>
+<status status="PASS" starttime="20201010 17:26:46.619" endtime="20201010 17:26:46.619"></status>
+</kw>
+<msg timestamp="20201010 17:26:46.619" level="INFO">${status} = New</msg>
+<status status="PASS" starttime="20201010 17:26:46.612" endtime="20201010 17:26:46.620"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${status}==New</arg>
+<arg>Run Keywords</arg>
+<arg>${candidateName}=</arg>
+<arg>ExcelReading</arg>
+<arg>${ExcelPath}</arg>
+<arg>1</arg>
+<arg>${i}</arg>
+<arg>${SheetName}</arg>
+<arg>AND</arg>
+<arg>${candidateEmail}=</arg>
+<arg>ExcelReading</arg>
+<arg>${ExcelPath}</arg>
+<arg>2</arg>
+<arg>${i}</arg>
+<arg>${SheetName}</arg>
+<arg>AND</arg>
+<arg>${candidateMobile}=</arg>
+<arg>ExcelReading</arg>
+<arg>${ExcelPath}</arg>
+<arg>3</arg>
+<arg>${i}</arg>
+<arg>${SheetName}</arg>
+<arg>AND</arg>
+<arg>${CandidateResume}</arg>
+<arg>ExcelReading</arg>
+<arg>${ExcelPath}</arg>
+<arg>4</arg>
+<arg>${i}</arg>
+<arg>${SheetName}</arg>
+<arg>ELSE</arg>
+<arg>Continue For Loop</arg>
+</arguments>
+<msg timestamp="20201010 17:26:46.622" level="FAIL">Evaluating expression 'New==New' failed: NameError: name 'New' is not defined nor importable as module</msg>
+<status status="FAIL" starttime="20201010 17:26:46.621" endtime="20201010 17:26:46.622"></status>
+</kw>
+<status status="FAIL" starttime="20201010 17:26:46.612" endtime="20201010 17:26:46.622"></status>
+</kw>
+<status status="FAIL" starttime="20201010 17:26:46.612" endtime="20201010 17:26:46.622"></status>
+</kw>
+<status status="FAIL" starttime="20201010 17:26:46.599" endtime="20201010 17:26:46.622" critical="yes">Evaluating expression 'New==New' failed: NameError: name 'New' is not defined nor importable as module</status>
+</test>
+<status status="FAIL" starttime="20201010 17:26:45.884" endtime="20201010 17:26:46.623"></status>
+</suite>
+<status status="FAIL" starttime="20201010 17:26:45.884" endtime="20201010 17:26:46.624"></status>
+</suite>
+<status status="FAIL" starttime="20201010 17:26:45.857" endtime="20201010 17:26:46.625"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1">Critical Tests</stat>
+<stat pass="0" fail="1">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" id="s1" name="LearningProject">LearningProject</stat>
+<stat pass="0" fail="1" id="s1-s1" name="Scripts">LearningProject.Scripts</stat>
+<stat pass="0" fail="1" id="s1-s1-s1" name="Candidate">LearningProject.Scripts.Candidate</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

@@ -1,0 +1,506 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.2.2 (Python 3.6.7 on win32)" generated="20201002 11:58:52.857" rpa="false">
+<suite id="s1" name="LearningProject" source="C:\My_Stuff\LearningProject">
+<suite id="s1-s1" name="Scripts" source="C:\My_Stuff\LearningProject\Scripts">
+<suite id="s1-s1-s1" name="Suite1" source="C:\My_Stuff\LearningProject\Scripts\Suite1.robot">
+<test id="s1-s1-s1-t1" name="To Create Company">
+<kw name="Login To Application" library="Keyword.robot">
+<arguments>
+<arg>https://dev2.geekassess.com/</arg>
+<arg>drongarg+1@gmail.com</arg>
+<arg>Yeknod@123</arg>
+</arguments>
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${url}</arg>
+<arg>chrome</arg>
+<arg>options=add_argument("disable-infobars"); add_argument("--ignore-certificate-errors")</arg>
+</arguments>
+<msg timestamp="20201002 11:58:53.176" level="INFO">Opening browser 'chrome' to base url 'https://dev2.geekassess.com/'.</msg>
+<status status="PASS" starttime="20201002 11:58:53.176" endtime="20201002 11:58:59.781"></status>
+</kw>
+<kw name="Set Browser Implicit Wait" library="SeleniumLibrary">
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<arguments>
+<arg>8s</arg>
+</arguments>
+<status status="PASS" starttime="20201002 11:58:59.781" endtime="20201002 11:58:59.782"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20201002 11:58:59.782" endtime="20201002 11:59:01.969"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${input_username}</arg>
+<arg>${username}</arg>
+</arguments>
+<msg timestamp="20201002 11:59:01.971" level="INFO">Typing text 'drongarg+1@gmail.com' into text field '//input[@id='login_emailOrMobile']'.</msg>
+<status status="PASS" starttime="20201002 11:59:01.970" endtime="20201002 11:59:02.273"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${input_password}</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20201002 11:59:02.274" level="INFO">Typing text 'Yeknod@123' into text field '//input[@id='login_password']'.</msg>
+<status status="PASS" starttime="20201002 11:59:02.273" endtime="20201002 11:59:02.390"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3s</arg>
+</arguments>
+<msg timestamp="20201002 11:59:05.396" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20201002 11:59:02.391" endtime="20201002 11:59:05.397"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${btn_login}</arg>
+</arguments>
+<msg timestamp="20201002 11:59:05.397" level="INFO">Clicking element '//button[@type='submit']'.</msg>
+<status status="PASS" starttime="20201002 11:59:05.397" endtime="20201002 11:59:05.456"></status>
+</kw>
+<status status="PASS" starttime="20201002 11:58:53.175" endtime="20201002 11:59:05.456"></status>
+</kw>
+<kw name="Create Company" library="Keyword.robot">
+<arguments>
+<arg>TestCompany6</arg>
+<arg>ddrr6@gmail.com</arg>
+<arg>+91993333290</arg>
+<arg>5-10</arg>
+<arg>Animation</arg>
+<arg>https://www.vignesh.com</arg>
+<arg>Bengaluru</arg>
+</arguments>
+<assign>
+<var>${companyName}</var>
+</assign>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${menu_Dashboard}</arg>
+</arguments>
+<msg timestamp="20201002 11:59:05.458" level="INFO">Clicking element '//a[@href='/web/companies']'.</msg>
+<status status="PASS" starttime="20201002 11:59:05.458" endtime="20201002 11:59:06.097"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${Company_button_Create}</arg>
+</arguments>
+<msg timestamp="20201002 11:59:06.098" level="INFO">Clicking element '//button[@class='ant-btn ant-btn-primary ant-btn-lg']'.</msg>
+<status status="PASS" starttime="20201002 11:59:06.098" endtime="20201002 11:59:06.799"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>Click Element</arg>
+<arg>${Create_Company}</arg>
+</arguments>
+<status status="PASS" starttime="20201002 11:59:06.800" endtime="20201002 11:59:06.800"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2s</arg>
+</arguments>
+<msg timestamp="20201002 11:59:08.807" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20201002 11:59:06.801" endtime="20201002 11:59:08.808"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${Company_input_CompanyNAme}</arg>
+<arg>${companyName}</arg>
+</arguments>
+<msg timestamp="20201002 11:59:08.812" level="INFO">Typing text 'TestCompany6' into text field '//input[@id='name']'.</msg>
+<status status="PASS" starttime="20201002 11:59:08.810" endtime="20201002 11:59:09.123"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${Company_input_companyemail}</arg>
+<arg>${companyEmail}</arg>
+</arguments>
+<msg timestamp="20201002 11:59:09.124" level="INFO">Typing text 'ddrr6@gmail.com' into text field '//input[@id='contactEmail']'.</msg>
+<status status="PASS" starttime="20201002 11:59:09.124" endtime="20201002 11:59:09.385"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${Company_input_companyTelephone}</arg>
+<arg>${companyTel}</arg>
+</arguments>
+<msg timestamp="20201002 11:59:09.386" level="INFO">Typing text '+91993333290' into text field '//input[@type='tel']'.</msg>
+<status status="PASS" starttime="20201002 11:59:09.386" endtime="20201002 11:59:09.554"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${Company_drondown_SelectTeamSize}</arg>
+</arguments>
+<msg timestamp="20201002 11:59:09.555" level="INFO">Clicking element '//div[contains(text(),'Select a team size')]'.</msg>
+<status status="PASS" starttime="20201002 11:59:09.555" endtime="20201002 11:59:09.613"></status>
+</kw>
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>SEPARATOR=</arg>
+<arg>//li[contains(text(),'</arg>
+<arg>${teamsize}</arg>
+<arg>')]</arg>
+</arguments>
+<assign>
+<var>${teamSize1}</var>
+</assign>
+<msg timestamp="20201002 11:59:09.614" level="INFO">${teamSize1} = //li[contains(text(),'5-10')]</msg>
+<status status="PASS" starttime="20201002 11:59:09.614" endtime="20201002 11:59:09.614"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${teamSize1}</arg>
+</arguments>
+<msg timestamp="20201002 11:59:09.615" level="INFO">Clicking element '//li[contains(text(),'5-10')]'.</msg>
+<status status="PASS" starttime="20201002 11:59:09.615" endtime="20201002 11:59:09.666"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${Company_drowpdown_Industry}</arg>
+</arguments>
+<msg timestamp="20201002 11:59:09.666" level="INFO">Clicking element '//div[contains(text(),'Please select a industry')]/..'.</msg>
+<status status="PASS" starttime="20201002 11:59:09.666" endtime="20201002 11:59:09.770"></status>
+</kw>
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>SEPARATOR=</arg>
+<arg>//li[contains(text(),'</arg>
+<arg>${Industry}</arg>
+<arg>')]</arg>
+</arguments>
+<assign>
+<var>${Industry1}</var>
+</assign>
+<msg timestamp="20201002 11:59:09.772" level="INFO">${Industry1} = //li[contains(text(),'Animation')]</msg>
+<status status="PASS" starttime="20201002 11:59:09.771" endtime="20201002 11:59:09.772"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${Industry1}</arg>
+</arguments>
+<msg timestamp="20201002 11:59:09.773" level="INFO">Clicking element '//li[contains(text(),'Animation')]'.</msg>
+<status status="PASS" starttime="20201002 11:59:09.772" endtime="20201002 11:59:09.876"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${Company_input_Website}</arg>
+<arg>${companyWebsite}</arg>
+</arguments>
+<msg timestamp="20201002 11:59:09.878" level="INFO">Typing text 'https://www.vignesh.com' into text field '//input[@id='website']'.</msg>
+<status status="PASS" starttime="20201002 11:59:09.877" endtime="20201002 11:59:10.216"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${Company_input_Address}</arg>
+<arg>${companyAddress}</arg>
+</arguments>
+<msg timestamp="20201002 11:59:10.217" level="INFO">Typing text 'Bengaluru' into text field '//input[@placeholder='Address']'.</msg>
+<status status="PASS" starttime="20201002 11:59:10.217" endtime="20201002 11:59:10.369"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2s</arg>
+</arguments>
+<msg timestamp="20201002 11:59:12.377" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20201002 11:59:10.369" endtime="20201002 11:59:12.378"></status>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<arguments>
+<arg>${Company_input_Address}</arg>
+<arg>ENTER</arg>
+</arguments>
+<msg timestamp="20201002 11:59:12.381" level="INFO">Sending key(s) ('ENTER',) to //input[@placeholder='Address'] element.</msg>
+<msg timestamp="20201002 11:59:12.722" level="INFO">Pressing special key ENTER to element.</msg>
+<msg timestamp="20201002 11:59:12.723" level="INFO">Releasing special key ENTER.</msg>
+<status status="PASS" starttime="20201002 11:59:12.379" endtime="20201002 11:59:12.763"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${Company_aboutCompany}</arg>
+</arguments>
+<msg timestamp="20201002 11:59:12.763" level="INFO">Clicking element '//div[@class='ql-editor ql-blank']'.</msg>
+<status status="PASS" starttime="20201002 11:59:12.763" endtime="20201002 11:59:12.860"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${Company_aboutCompany}</arg>
+<arg>Check Text</arg>
+</arguments>
+<msg timestamp="20201002 11:59:12.863" level="INFO">Typing text 'Check Text' into text field '//div[@class='ql-editor ql-blank']'.</msg>
+<status status="PASS" starttime="20201002 11:59:12.861" endtime="20201002 11:59:13.113"></status>
+</kw>
+<kw name="Choose File" library="SeleniumLibrary">
+<doc>Inputs the ``file_path`` into the file input field ``locator``.</doc>
+<arguments>
+<arg>${Company_Input_Logo}</arg>
+<arg>C:\\Users\\U6054435\\OneDrive - Clarivate Analytics\\Desktop\\CMC\\Screenshots\\CMC_Home1.png</arg>
+</arguments>
+<msg timestamp="20201002 11:59:13.114" level="INFO">Sending C:\Users\U6054435\OneDrive - Clarivate Analytics\Desktop\CMC\Screenshots\CMC_Home1.png to browser.</msg>
+<status status="PASS" starttime="20201002 11:59:13.113" endtime="20201002 11:59:13.170"></status>
+</kw>
+<kw name="Mouse Over" library="SeleniumLibrary">
+<doc>Simulates hovering the mouse over the element ``locator``.</doc>
+<arguments>
+<arg>${company_btn_ok}</arg>
+</arguments>
+<msg timestamp="20201002 11:59:13.171" level="INFO">Simulating Mouse Over on element '//div[@class='ant-modal-footer']/div/button/span[contains(text(),'OK')]'.</msg>
+<status status="PASS" starttime="20201002 11:59:13.170" endtime="20201002 11:59:13.468"></status>
+</kw>
+<kw name="Mouse Down" library="SeleniumLibrary">
+<doc>Simulates pressing the left mouse button on the element ``locator``.</doc>
+<arguments>
+<arg>${company_btn_ok}</arg>
+</arguments>
+<msg timestamp="20201002 11:59:13.468" level="INFO">Simulating Mouse Down on element '//div[@class='ant-modal-footer']/div/button/span[contains(text(),'OK')]'.</msg>
+<status status="PASS" starttime="20201002 11:59:13.468" endtime="20201002 11:59:13.793"></status>
+</kw>
+<kw name="Double Click Element" library="SeleniumLibrary">
+<doc>Double clicks the element identified by ``locator``.</doc>
+<arguments>
+<arg>${company_btn_ok}</arg>
+</arguments>
+<msg timestamp="20201002 11:59:13.796" level="INFO">Double clicking element '//div[@class='ant-modal-footer']/div/button/span[contains(text(),'OK')]'.</msg>
+<status status="PASS" starttime="20201002 11:59:13.794" endtime="20201002 11:59:14.186"></status>
+</kw>
+<kw name="Double Click Element" library="SeleniumLibrary">
+<doc>Double clicks the element identified by ``locator``.</doc>
+<arguments>
+<arg>${Company_btn_Save}</arg>
+</arguments>
+<msg timestamp="20201002 11:59:14.186" level="INFO">Double clicking element '//button[@type='submit']'.</msg>
+<status status="PASS" starttime="20201002 11:59:14.186" endtime="20201002 11:59:14.631"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>Sleep</arg>
+<arg>4s</arg>
+</arguments>
+<status status="PASS" starttime="20201002 11:59:14.631" endtime="20201002 11:59:14.631"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>Input Text</arg>
+<arg>${candidate_input_searchByName}</arg>
+<arg>${companyName}</arg>
+</arguments>
+<status status="PASS" starttime="20201002 11:59:14.632" endtime="20201002 11:59:14.632"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>sleep</arg>
+<arg>2s</arg>
+</arguments>
+<status status="PASS" starttime="20201002 11:59:14.632" endtime="20201002 11:59:14.632"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>${Xpath_by_candidateName}</arg>
+<arg>Catenate</arg>
+<arg>SEPARATOR=</arg>
+<arg>//div[@class='ant-list candidates list ant-list-vertical ant-list-lg ant-list-split']/div/div/ul/li[1]//a[text()='</arg>
+<arg>${companyName}</arg>
+<arg>']</arg>
+</arguments>
+<status status="PASS" starttime="20201002 11:59:14.632" endtime="20201002 11:59:14.632"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>Element Should Be Visible</arg>
+<arg>${Xpath_by_candidateName}</arg>
+</arguments>
+<status status="PASS" starttime="20201002 11:59:14.636" endtime="20201002 11:59:14.636"></status>
+</kw>
+<msg timestamp="20201002 11:59:14.636" level="INFO">${companyName} = TestCompany6</msg>
+<status status="PASS" starttime="20201002 11:59:05.456" endtime="20201002 11:59:14.636"></status>
+</kw>
+<kw name="Validate Existence For Company" library="Keyword.robot">
+<arguments>
+<arg>${companyName}</arg>
+</arguments>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>sleep</arg>
+<arg>4s</arg>
+</arguments>
+<status status="PASS" starttime="20201002 11:59:14.640" endtime="20201002 11:59:14.640"></status>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<arguments>
+<arg>20s</arg>
+<arg>10s</arg>
+<arg>Click Element</arg>
+<arg>${menu_Dashboard}</arg>
+</arguments>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${menu_Dashboard}</arg>
+</arguments>
+<msg timestamp="20201002 11:59:14.643" level="INFO">Clicking element '//a[@href='/web/companies']'.</msg>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20201002 11:59:16.180" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-17.png"&gt;&lt;img src="selenium-screenshot-17.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20201002 11:59:15.783" endtime="20201002 11:59:16.181"></status>
+</kw>
+<msg timestamp="20201002 11:59:16.185" level="FAIL">ElementClickInterceptedException: Message: element click intercepted: Element &lt;a href="/web/companies" aria-current="page" class="active"&gt;...&lt;/a&gt; is not clickable at point (504, 32). Other element would receive the click: &lt;div class="ant-drawer-mask"&gt;&lt;/div&gt;
+  (Session info: chrome=85.0.4183.121)
+</msg>
+<status status="FAIL" starttime="20201002 11:59:14.642" endtime="20201002 11:59:16.185"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${menu_Dashboard}</arg>
+</arguments>
+<msg timestamp="20201002 11:59:26.190" level="INFO">Clicking element '//a[@href='/web/companies']'.</msg>
+<status status="PASS" starttime="20201002 11:59:26.187" endtime="20201002 11:59:26.374"></status>
+</kw>
+<status status="PASS" starttime="20201002 11:59:14.641" endtime="20201002 11:59:26.374"></status>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<arguments>
+<arg>Click Element</arg>
+<arg>${menu_Dashboard}</arg>
+</arguments>
+<status status="PASS" starttime="20201002 11:59:26.375" endtime="20201002 11:59:26.376"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${candidate_input_searchByName}</arg>
+<arg>${Name}</arg>
+</arguments>
+<msg timestamp="20201002 11:59:26.379" level="INFO">Typing text 'TestCompany6' into text field '//input[@placeholder='Search by name']'.</msg>
+<status status="PASS" starttime="20201002 11:59:26.378" endtime="20201002 11:59:26.795"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2s</arg>
+</arguments>
+<msg timestamp="20201002 11:59:28.807" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20201002 11:59:26.796" endtime="20201002 11:59:28.808"></status>
+</kw>
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>SEPARATOR=</arg>
+<arg>//div[@class='ant-list candidates list ant-list-vertical ant-list-lg ant-list-split']/div/div/ul/li[1]//a[text()='</arg>
+<arg>${Name}</arg>
+<arg>']</arg>
+</arguments>
+<assign>
+<var>${Xpath_by_candidateName}</var>
+</assign>
+<msg timestamp="20201002 11:59:28.811" level="INFO">${Xpath_by_candidateName} = //div[@class='ant-list candidates list ant-list-vertical ant-list-lg ant-list-split']/div/div/ul/li[1]//a[text()='TestCompany6']</msg>
+<status status="PASS" starttime="20201002 11:59:28.810" endtime="20201002 11:59:28.811"></status>
+</kw>
+<kw name="Take Screenshot" library="Screenshot">
+<doc>Takes a screenshot in JPEG format and embeds it into the log file.</doc>
+<arguments>
+<arg>${Name}</arg>
+</arguments>
+<msg timestamp="20201002 11:59:28.943" level="INFO" html="yes">&lt;a href="TestCompany6_1.jpg"&gt;&lt;img src="TestCompany6_1.jpg" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20201002 11:59:28.811" endtime="20201002 11:59:28.943"></status>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<arguments>
+<arg>${Xpath_by_candidateName}</arg>
+</arguments>
+<msg timestamp="20201002 11:59:28.994" level="INFO">Element '//div[@class='ant-list candidates list ant-list-vertical ant-list-lg ant-list-split']/div/div/ul/li[1]//a[text()='TestCompany6']' is displayed.</msg>
+<status status="PASS" starttime="20201002 11:59:28.944" endtime="20201002 11:59:28.994"></status>
+</kw>
+<status status="PASS" starttime="20201002 11:59:14.636" endtime="20201002 11:59:28.995"></status>
+</kw>
+<kw name="Logout" library="Keyword.robot">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${logo_signout}</arg>
+<arg>20s</arg>
+</arguments>
+<status status="PASS" starttime="20201002 11:59:28.997" endtime="20201002 11:59:29.049"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${logo_signout}</arg>
+</arguments>
+<msg timestamp="20201002 11:59:29.049" level="INFO">Clicking element '//li[@class='ant-menu-item mr-0']/div/i'.</msg>
+<status status="PASS" starttime="20201002 11:59:29.049" endtime="20201002 11:59:29.137"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2s</arg>
+</arguments>
+<msg timestamp="20201002 11:59:31.147" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20201002 11:59:29.141" endtime="20201002 11:59:31.148"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${lnk_logout}</arg>
+</arguments>
+<msg timestamp="20201002 11:59:31.151" level="INFO">Clicking element '//li[contains(text(),'Logout')]/i'.</msg>
+<status status="PASS" starttime="20201002 11:59:31.149" endtime="20201002 11:59:31.292"></status>
+</kw>
+<status status="PASS" starttime="20201002 11:59:28.996" endtime="20201002 11:59:31.293"></status>
+</kw>
+<status status="PASS" starttime="20201002 11:58:53.175" endtime="20201002 11:59:31.293" critical="yes"></status>
+</test>
+<status status="PASS" starttime="20201002 11:58:52.930" endtime="20201002 11:59:31.294"></status>
+</suite>
+<status status="PASS" starttime="20201002 11:58:52.928" endtime="20201002 11:59:31.296"></status>
+</suite>
+<status status="PASS" starttime="20201002 11:58:52.899" endtime="20201002 11:59:31.297"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0">Critical Tests</stat>
+<stat pass="1" fail="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" id="s1" name="LearningProject">LearningProject</stat>
+<stat pass="1" fail="0" id="s1-s1" name="Scripts">LearningProject.Scripts</stat>
+<stat pass="1" fail="0" id="s1-s1-s1" name="Suite1">LearningProject.Scripts.Suite1</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

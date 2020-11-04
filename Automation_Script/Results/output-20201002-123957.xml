@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.2.2 (Python 3.6.7 on win32)" generated="20201002 12:39:57.500" rpa="false">
+<suite id="s1" name="LearningProject" source="C:\My_Stuff\LearningProject">
+<suite id="s1-s1" name="Scripts" source="C:\My_Stuff\LearningProject\Scripts">
+<suite id="s1-s1-s1" name="Candidate" source="C:\My_Stuff\LearningProject\Scripts\Candidate.robot">
+<test id="s1-s1-s1-t1" name="To Add Candidate From Top Menu">
+<kw name="Login To Application" library="Keyword.robot">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${url}</arg>
+<arg>chrome</arg>
+<arg>options=add_argument("disable-infobars"); add_argument("--ignore-certificate-errors")</arg>
+</arguments>
+<msg timestamp="20201002 12:39:57.806" level="INFO">Opening browser 'chrome' to base url 'https://dev2.geekassess.com/web/login'.</msg>
+<status status="PASS" starttime="20201002 12:39:57.805" endtime="20201002 12:40:04.786"></status>
+</kw>
+<kw name="Set Browser Implicit Wait" library="SeleniumLibrary">
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<arguments>
+<arg>8s</arg>
+</arguments>
+<status status="PASS" starttime="20201002 12:40:04.786" endtime="20201002 12:40:04.787"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20201002 12:40:04.788" endtime="20201002 12:40:06.950"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${input_username}</arg>
+<arg>${username}</arg>
+</arguments>
+<msg timestamp="20201002 12:40:06.950" level="INFO">Typing text 'drongarg+1@gmail.com' into text field '//input[@id='login_emailOrMobile']'.</msg>
+<status status="PASS" starttime="20201002 12:40:06.950" endtime="20201002 12:40:07.270"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${input_password}</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20201002 12:40:07.271" level="INFO">Typing text 'Yeknod@123' into text field '//input[@id='login_password']'.</msg>
+<status status="PASS" starttime="20201002 12:40:07.270" endtime="20201002 12:40:07.395"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3s</arg>
+</arguments>
+<msg timestamp="20201002 12:40:10.407" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20201002 12:40:07.396" endtime="20201002 12:40:10.407"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${btn_login}</arg>
+</arguments>
+<msg timestamp="20201002 12:40:10.408" level="INFO">Clicking element '//button[@type='submit']'.</msg>
+<status status="PASS" starttime="20201002 12:40:10.408" endtime="20201002 12:40:10.468"></status>
+</kw>
+<status status="PASS" starttime="20201002 12:39:57.804" endtime="20201002 12:40:10.468"></status>
+</kw>
+<kw name="Add Candidate From Top Menu" library="Keyword.robot">
+<arguments>
+<arg>Xing Ping10</arg>
+<arg>xing10@jhin.com</arg>
+<arg>+91933312260</arg>
+<arg>Data/SampleResume.rtf</arg>
+</arguments>
+<assign>
+<var>${candidateName}</var>
+</assign>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${Home_button_Create}</arg>
+</arguments>
+<msg timestamp="20201002 12:40:10.470" level="INFO">Clicking element '//button[@class='ant-btn ml-auto font-weight-medium px-3 btn-create ant-dropdown-trigger ant-btn-primary']'.</msg>
+<status status="PASS" starttime="20201002 12:40:10.469" endtime="20201002 12:40:11.081"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${Home_lnk_AddCandidate}</arg>
+</arguments>
+<msg timestamp="20201002 12:40:11.083" level="INFO">Clicking element '//a[@href='/web/add-job']/../..//li[contains(text(),'Candidate')]'.</msg>
+<status status="PASS" starttime="20201002 12:40:11.081" endtime="20201002 12:40:11.333"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2s</arg>
+</arguments>
+<msg timestamp="20201002 12:40:13.336" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20201002 12:40:11.333" endtime="20201002 12:40:13.337"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${candidate_input_name}</arg>
+<arg>${Name}</arg>
+</arguments>
+<msg timestamp="20201002 12:40:13.342" level="INFO">Typing text 'Xing Ping10' into text field '//input[@id='register_name']'.</msg>
+<status status="PASS" starttime="20201002 12:40:13.340" endtime="20201002 12:40:13.547"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${candidate_input_email}</arg>
+<arg>${Email}</arg>
+</arguments>
+<msg timestamp="20201002 12:40:13.547" level="INFO">Typing text 'xing10@jhin.com' into text field '//input[@id='register_email']'.</msg>
+<status status="PASS" starttime="20201002 12:40:13.547" endtime="20201002 12:40:13.702"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${candidate_input_telnumber}</arg>
+<arg>${Phone}</arg>
+</arguments>
+<msg timestamp="20201002 12:40:13.703" level="INFO">Typing text '+91933312260' into text field '//label[@For='register_mobileNo']/../../div[2]//input'.</msg>
+<status status="PASS" starttime="20201002 12:40:13.702" endtime="20201002 12:40:13.866"></status>
+</kw>
+<kw name="Choose File" library="SeleniumLibrary">
+<doc>Inputs the ``file_path`` into the file input field ``locator``.</doc>
+<arguments>
+<arg>${candidate_input_resume}</arg>
+<arg>${Resume_Path}</arg>
+</arguments>
+<msg timestamp="20201002 12:40:13.868" level="INFO">Sending C:\My_Stuff\LearningProject\Data\SampleResume.rtf to browser.</msg>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20201002 12:40:14.291" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-20.png"&gt;&lt;img src="selenium-screenshot-20.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20201002 12:40:13.905" endtime="20201002 12:40:14.291"></status>
+</kw>
+<msg timestamp="20201002 12:40:14.297" level="FAIL">WebDriverException: Message: unknown error: path is not absolute: Data/SampleResume.rtf
+  (Session info: chrome=85.0.4183.121)
+</msg>
+<status status="FAIL" starttime="20201002 12:40:13.866" endtime="20201002 12:40:14.298"></status>
+</kw>
+<status status="FAIL" starttime="20201002 12:40:10.469" endtime="20201002 12:40:14.299"></status>
+</kw>
+<status status="FAIL" starttime="20201002 12:39:57.802" endtime="20201002 12:40:14.300" critical="yes">WebDriverException: Message: unknown error: path is not absolute: Data/SampleResume.rtf
+  (Session info: chrome=85.0.4183.121)
+</status>
+</test>
+<status status="FAIL" starttime="20201002 12:39:57.557" endtime="20201002 12:40:14.301"></status>
+</suite>
+<status status="FAIL" starttime="20201002 12:39:57.549" endtime="20201002 12:40:14.305"></status>
+</suite>
+<status status="FAIL" starttime="20201002 12:39:57.526" endtime="20201002 12:40:14.312"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1">Critical Tests</stat>
+<stat pass="0" fail="1">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" id="s1" name="LearningProject">LearningProject</stat>
+<stat pass="0" fail="1" id="s1-s1" name="Scripts">LearningProject.Scripts</stat>
+<stat pass="0" fail="1" id="s1-s1-s1" name="Candidate">LearningProject.Scripts.Candidate</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

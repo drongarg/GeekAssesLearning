@@ -1,0 +1,46 @@
+*** Variables ***
+${input_username}    //input[@id='login_emailOrMobile']
+${input_password}    //input[@id='login_password']
+${btn_login}      //button[@type='submit']
+${logo_signout}    //li[@class='ant-menu-item mr-0']/div/i
+${lnk_logout}     //li[contains(text(),'Logout')]/i
+${menu_Dashboard}    //a[@href='/web/companies']
+${Company_button_Create}    //button[@class='ant-btn ant-btn-primary ant-btn-lg']
+${Company_input_CompanyNAme}    //input[@id='name']
+${Company_input_companyemail}    //input[@id='contactEmail']
+${Company_input_companyTelephone}    //input[@type='tel']
+${Company_drondown_SelectTeamSize}    //div[contains(text(),'Select a team size')]
+${Company_drowpdown_Industry}    //div[contains(text(),'Please select a industry')]/..
+${Company_input_Website}    //input[@id='website']
+${Company_input_Address}    //input[@placeholder='Address']
+${Company_aboutCompany}    //div[@class='ql-editor ql-blank']
+${Company_Input_Logo}    //input[@type='file']
+${Company_btn_Save}    //button[@type='submit']
+${Create_Company}    //ul[@class='ant-dropdown-menu ant-dropdown-menu-light ant-dropdown-menu-root ant-dropdown-menu-vertical']//li[contains(text(),'Company')]
+${company_btn_ok}    //div[@class='ant-modal-footer']/div/button/span[contains(text(),'OK')]
+${menu_Dashboard_Jobs}    //a[@href='/web/jobs']
+${jobs_dropdown_company}    //div[contains(text(),'Type company name to select')]
+${Jobs_btn_Next1}    //button[@type='submit']/span[contains(text(),'Next')]/..
+${menu_Dashboard_Candidates}    //a[@href='/web/candidates']
+${candidate_input_name}    //input[@id='register_name']
+${candidate_input_email}    //input[@id='register_email']
+${candidate_input_telnumber}    //label[@For='register_mobileNo']/../../div[2]//input
+${candidate_input_resume}    //span[contains(text(),'Select File')]/../../input
+${candidate_btn_Add}    //button[@type='submit']/span[text()='Add Candidate']
+${success_message_add_candidate}    //span[contains(text(),'Candidate added Successfully')]
+${candidate_input_searchByName}    //input[@placeholder='Search by name']
+${jobs_input_jobTitle}		//input[@id='step_two_title']
+${jobs_input_jobType}		//label[contains(text(),'Type')]/../../div[2]/div/span
+${jobs_input_jobSkills}		//input[@id='step_two_skillSet']
+${jobs_input_workLocation}		//label[contains(text(),'Work Location')]/../..//input
+${jobs_input_experience}		//input[@id='step_two_experienceRange']
+${jobs_input_Education}			//input[@id='step_two_educationalQualification']
+${Jobs_btn_Next2}		//button[@type='button']/span[contains(text(),'Next')]/..
+${Jobs_btn_Confirm}		//button[@type='submit']/span[contains(text(),'Confirm')]/..
+${jobs_input_SearchTitle}		//input[@placeholder='Search by title']
+${jobs_input_SearchCompnay}		//input[@placeholder='Search by company']
+${Home_button_Create}		//button[@class='ant-btn ml-auto font-weight-medium px-3 btn-create ant-dropdown-trigger ant-btn-primary']
+${Home_lnk_AddJob}		//a[@href='/web/add-job']
+${Home_lnk_AddCandidate}		//a[@href='/web/add-job']/../..//li[contains(text(),'Candidate')]
+${jobs_btn_CreateNewCompany}		//span[contains(text(),'Create new company')]/../../button
+

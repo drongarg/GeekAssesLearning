@@ -1,0 +1,231 @@
+*** Settings ***
+Library           SeleniumLibrary
+Resource          OR.txt
+Library           Screenshot
+Library		  ExcelRobot
+
+*** Variables ***
+${username}       drongarg+1@gmail.com
+${password}       Yeknod@123
+${url}            https://dev2.geekassess.com/web/login
+
+*** Keywords ***
+ExcelReading
+    [Arguments]    ${Excel_Name}    ${column_no}    ${row_no}    ${sheetname}
+    Open Excel    ${Excel_Name}
+    ${value}=    Read Cell Data    ${sheetname}    ${column_no}    ${row_no}
+    Log To Console    ${value}
+    [Return]    ${value}
+
+RowNumber
+    [Arguments]    ${Excel_Name}    ${sheetname}
+    Open Excel    ${Excel_Name}
+    ${rownum}=    Get Row Count    ${sheetname}
+    Log To Console    ${rownum}
+    [Return]    ${rownum}
+
+Login To Application
+    Open Browser    ${url}    chrome    options=add_argument("disable-infobars"); add_argument("--ignore-certificate-errors")
+    Set Browser Implicit Wait    8s
+    Maximize Browser Window
+    Input Text    ${input_username}    ${username}
+    Input Text    ${input_password}    ${password}
+    sleep    3s
+    Click Element    ${btn_login}
+
+Logout
+    Wait Until Element Is Visible    ${logo_signout}    20s
+    Click Element    ${logo_signout}
+    sleep    2s
+    Click Element    ${lnk_logout}
+
+Create Company
+    [Arguments]    ${companyName}    ${companyEmail}    ${companyTel}    ${teamsize}    ${Industry}    ${companyWebsite}    ${companyAddress}
+    Click Element    ${menu_Dashboard}
+    Click Element    ${Company_button_Create}
+    Comment    Click Element    ${Create_Company}
+    sleep    2s
+    Input Text    ${Company_input_CompanyNAme}    ${companyName}
+    Input Text    ${Company_input_companyemail}    ${companyEmail}
+    Input Text    ${Company_input_companyTelephone}    ${companyTel}
+    Click Element    ${Company_drondown_SelectTeamSize}
+    ${teamSize1}=    Catenate    SEPARATOR=    //li[contains(text(),'    ${teamsize}    ')]
+    Click Element    ${teamSize1}
+    Click Element    ${Company_drowpdown_Industry}
+    ${Industry1}=    Catenate    SEPARATOR=    //li[contains(text(),'    ${Industry}    ')]
+    Click Element    ${Industry1}
+    Input Text    ${Company_input_Website}    ${companyWebsite}
+    Input Text    ${Company_input_Address}    ${companyAddress}
+    sleep    2s
+    Press Keys    ${Company_input_Address}    ENTER
+    Click Element    ${Company_aboutCompany}
+    Input Text    ${Company_aboutCompany}    Check Text
+    Choose File    ${Company_Input_Logo}    C:\\Users\\U6054435\\OneDrive - Clarivate Analytics\\Desktop\\CMC\\Screenshots\\CMC_Home1.png
+    Mouse Over    ${company_btn_ok}
+    Mouse Down    ${company_btn_ok}
+    Double Click Element    ${company_btn_ok}
+    Double Click Element    ${Company_btn_Save}
+    [Return]    ${companyName}
+
+Create Job
+    [Arguments]    ${companyName}    ${jobTitle}    ${jobType}    ${jobDescription}    ${jobSkills}    ${jobWorkLoc}    ${jobExperience}    ${jobEducation}    ${Industry}
+    Click Element    ${menu_Dashboard_Jobs}
+    Click Element    ${Company_button_Create}
+    Comment    Click Element    ${Create_Company}
+    sleep    2s
+    Click Element    ${jobs_dropdown_company}
+    ${company_Name1}=    Catenate    SEPARATOR=    //li[contains(text(),'    ${companyName}    ')]
+    Click Element    ${company_Name1}
+    Wait Until Keyword Succeeds    20s    10s    Click Element    ${Jobs_btn_Next1}
+    Input Text    ${jobs_input_jobTitle}    ${jobTitle}
+    Click Element    ${jobs_input_jobType}
+    ${jobType1}=    Catenate    SEPARATOR=    //li[contains(text(),'    ${jobType}    ')]
+    Click Element    ${jobType1}
+    Click Element    ${Company_aboutCompany}
+    Input Text    ${Company_aboutCompany}    ${jobDescription}
+    Input Text    ${jobs_input_jobSkills}    ${jobSkills}
+    Input Text    ${jobs_input_workLocation}    ${jobWorkLoc}
+    sleep    2s
+    Press Keys    ${jobs_input_workLocation}    ENTER
+    Input Text    ${jobs_input_experience}    ${jobExperience}
+    Input Text    ${jobs_input_Education}    ${jobEducation}
+    Wait Until Keyword Succeeds    20s    5s    Click Element    ${Company_drowpdown_Industry}
+    ${Industry1}=    Catenate    SEPARATOR=    //li[contains(text(),'    ${Industry}    ')]
+    Click Element    ${Industry1}
+    Wait Until Keyword Succeeds    20s    10s    Click Element    ${Jobs_btn_Next2}
+    Wait Until Keyword Succeeds    20s    10s    Click Element    ${Jobs_btn_Confirm}
+    [Return]    ${jobTitle}    ${companyName}
+
+Add Candidate
+    [Arguments]    ${Name}    ${Email}    ${Phone}    ${Resume_Path}
+    Click Element    ${menu_Dashboard_Candidates}
+    Click Element    ${Company_button_Create}
+    sleep    2s
+    Input Text    ${candidate_input_name}    ${Name}
+    Input Text    ${candidate_input_email}    ${Email}
+    Input Text    ${candidate_input_telnumber}    ${Phone}
+    Run Keyword If      '${Resume_Path}'!='None'      Choose File    ${candidate_input_resume}    ${Resume_Path}
+    sleep    2s
+    Mouse Over    ${candidate_btn_Add}
+    Comment    Click Element    ${candidate_btn_Add}
+    Mouse Down    ${candidate_btn_Add}
+    Double Click Element    ${candidate_btn_Add}
+    Comment    Sleep    4s
+    Comment    Input Text    ${candidate_input_searchByName}    ${Name}
+    Comment    sleep    2s
+    Comment    ${Xpath_by_candidateName}    Catenate    SEPARATOR=    //div[@class='ant-list candidates list ant-list-vertical ant-list-lg ant-list-split']/div/div/ul/li[1]//a[text()='    ${Name}    ']
+    Comment    Element Should Be Visible    ${Xpath_by_candidateName}
+    [Return]    ${Name}
+
+Validate Existence For Candidate
+    [Arguments]    ${Name}
+    Comment    sleep
+    Wait Until Keyword Succeeds    20s    10s    Click Element    ${menu_Dashboard_Candidates}
+    Comment    Click Element    ${menu_Dashboard_Candidates}
+    Input Text    ${candidate_input_searchByName}    ${Name}
+    sleep    2s
+    ${Xpath_by_candidateName}    Catenate    SEPARATOR=    //div[@class='ant-list candidates list ant-list-vertical ant-list-lg ant-list-split']/div/div/ul/li[1]//a[text()='    ${Name}    ']
+    Take Screenshot    ${Name}
+    Element Should Be Visible    ${Xpath_by_candidateName}
+
+Validate Existence For Company
+    [Arguments]    ${Name}
+    Comment    sleep    4s
+    Wait Until Keyword Succeeds    20s    10s    Click Element    ${menu_Dashboard}
+    Comment    Click Element    ${menu_Dashboard}
+    Input Text    ${candidate_input_searchByName}    ${Name}
+    sleep    2s
+    ${Xpath_by_candidateName}    Catenate    SEPARATOR=    //div[@class='ant-list candidates list ant-list-vertical ant-list-lg ant-list-split']/div/div/ul/li[1]//a[text()='    ${Name}    ']
+    Take Screenshot    ${Name}
+    Element Should Be Visible    ${Xpath_by_candidateName}
+
+Validate Existence For Jobs
+    [Arguments]    ${Name}    ${companyName}
+    Comment    sleep    4s
+    Wait Until Keyword Succeeds    20s    10s    Click Element    ${menu_Dashboard_Jobs}
+    Comment    Click Element    ${menu_Dashboard}
+    Input Text    ${jobs_input_SearchTitle}    ${Name}
+    Input Text    ${jobs_input_SearchCompnay}    ${companyName}
+    sleep    2s
+    ${Xpath_by_candidateName}    Catenate    SEPARATOR=    //div[@class='ant-list list ant-list-vertical ant-list-lg ant-list-split']/div/div/ul/li[1]//a[text()='    ${Name}    ']
+    Take Screenshot    ${Name}
+    Element Should Be Visible    ${Xpath_by_candidateName}
+
+Create Job From Top Menu
+    [Arguments]    ${companyName}    ${jobTitle}    ${jobType}    ${jobDescription}    ${jobSkills}    ${jobWorkLoc}    ${jobExperience}    ${jobEducation}    ${Industry}
+    Click Element    ${Home_button_Create}
+    Click Element    ${Home_lnk_AddJob}
+    Comment    Click Element    ${Create_Company}
+    sleep    2s
+    Click Element    ${jobs_dropdown_company}
+    ${company_Name1}=    Catenate    SEPARATOR=    //li[contains(text(),'    ${companyName}    ')]
+    Click Element    ${company_Name1}
+    Wait Until Keyword Succeeds    20s    10s    Click Element    ${Jobs_btn_Next1}
+    Input Text    ${jobs_input_jobTitle}    ${jobTitle}
+    Click Element    ${jobs_input_jobType}
+    ${jobType1}=    Catenate    SEPARATOR=    //li[contains(text(),'    ${jobType}    ')]
+    Click Element    ${jobType1}
+    Click Element    ${Company_aboutCompany}
+    Input Text    ${Company_aboutCompany}    ${jobDescription}
+    Input Text    ${jobs_input_jobSkills}    ${jobSkills}
+    Input Text    ${jobs_input_workLocation}    ${jobWorkLoc}
+    sleep    2s
+    Press Keys    ${jobs_input_workLocation}    ENTER
+    Input Text    ${jobs_input_experience}    ${jobExperience}
+    Input Text    ${jobs_input_Education}    ${jobEducation}
+    Wait Until Keyword Succeeds    20s    5s    Click Element    ${Company_drowpdown_Industry}
+    ${Industry1}=    Catenate    SEPARATOR=    //li[contains(text(),'    ${Industry}    ')]
+    Click Element    ${Industry1}
+    Wait Until Keyword Succeeds    20s    10s    Click Element    ${Jobs_btn_Next2}
+    Wait Until Keyword Succeeds    20s    10s    Click Element    ${Jobs_btn_Confirm}
+    [Return]    ${jobTitle}    ${companyName}
+
+Add Candidate From Top Menu
+    [Arguments]    ${Name}    ${Email}    ${Phone}    ${Resume_Path}
+    Click Element    ${Home_button_Create}
+    Click Element    ${Home_lnk_AddCandidate}
+    sleep    2s
+    Input Text    ${candidate_input_name}    ${Name}
+    Input Text    ${candidate_input_email}    ${Email}
+    Input Text    ${candidate_input_telnumber}    ${Phone}
+    Run Keyword If      '${Resume_Path}'!='None'        Choose File    ${candidate_input_resume}    ${Resume_Path}
+    sleep    2s
+    Mouse Over    ${candidate_btn_Add}
+    Comment    Click Element    ${candidate_btn_Add}
+    Mouse Down    ${candidate_btn_Add}
+    Double Click Element    ${candidate_btn_Add}
+    Comment    Sleep    4s
+    Comment    Input Text    ${candidate_input_searchByName}    ${Name}
+    Comment    sleep    2s
+    Comment    ${Xpath_by_candidateName}    Catenate    SEPARATOR=    //div[@class='ant-list candidates list ant-list-vertical ant-list-lg ant-list-split']/div/div/ul/li[1]//a[text()='    ${Name}    ']
+    Comment    Element Should Be Visible    ${Xpath_by_candidateName}
+    [Return]    ${Name}
+
+Create Job From Top Menu With \ Company
+    [Arguments]    ${companyName}    ${jobTitle}    ${jobType}    ${jobDescription}    ${jobSkills}    ${jobWorkLoc}    ${jobExperience}    ${jobEducation}    ${Industry}
+    Click Element    ${Home_button_Create}
+    Click Element    ${Home_lnk_AddJob}
+    Comment    Click Element    ${Create_Company}
+    sleep    2s
+    Click Element    ${jobs_btn_CreateNewCompany}
+    Comment    ${company_Name1}=    Catenate    SEPARATOR=    //li[contains(text(),'    ${companyName}    ')]
+    Comment    Click Element    ${company_Name1}
+    Comment    Wait Until Keyword Succeeds    20s    10s    Click Element    ${Jobs_btn_Next1}
+    Input Text    ${jobs_input_jobTitle}    ${jobTitle}
+    Click Element    ${jobs_input_jobType}
+    ${jobType1}=    Catenate    SEPARATOR=    //li[contains(text(),'    ${jobType}    ')]
+    Click Element    ${jobType1}
+    Click Element    ${Company_aboutCompany}
+    Input Text    ${Company_aboutCompany}    ${jobDescription}
+    Input Text    ${jobs_input_jobSkills}    ${jobSkills}
+    Input Text    ${jobs_input_workLocation}    ${jobWorkLoc}
+    sleep    2s
+    Press Keys    ${jobs_input_workLocation}    ENTER
+    Input Text    ${jobs_input_experience}    ${jobExperience}
+    Input Text    ${jobs_input_Education}    ${jobEducation}
+    Wait Until Keyword Succeeds    20s    5s    Click Element    ${Company_drowpdown_Industry}
+    ${Industry1}=    Catenate    SEPARATOR=    //li[contains(text(),'    ${Industry}    ')]
+    Click Element    ${Industry1}
+    Wait Until Keyword Succeeds    20s    10s    Click Element    ${Jobs_btn_Next2}
+    Wait Until Keyword Succeeds    20s    10s    Click Element    ${Jobs_btn_Confirm}
+    [Return]    ${jobTitle}    ${companyName}

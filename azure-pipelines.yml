@@ -33,5 +33,5 @@ steps:
     npm install chromedriver
   displayName: 'pytest'
 
-- powershell: robot --pythonpath . Automation_Script\Scripts\Login.robot
+- powershell: robot --pythonpath . Login.robot
   displayName: 'LoginTestCase'

@@ -40,5 +40,4 @@ steps:
   inputs:
     testResultsFiles: reportoutput.html
     searchFolder: 'D:\a\1\s\'
-  condition: succeededOrFailed()
   displayName: 'Publish Test Results reportoutput.html'

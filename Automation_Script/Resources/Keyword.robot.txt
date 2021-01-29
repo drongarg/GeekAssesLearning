@@ -5,9 +5,9 @@ Library           Screenshot
 Library		  ExcelRobot
 
 *** Variables ***
-${username}       drongarg+2@gmail.com
+${username}       drongarg@gmail.com
 ${password}       Yeknod@123
-${url}            https://dev2.geekassess.com/web/login
+${url}            https://dev.geekassess.com/web/login
 
 *** Keywords ***
 ExcelReading

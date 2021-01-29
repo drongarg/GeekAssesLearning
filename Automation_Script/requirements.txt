@@ -1,0 +1,4 @@
+openpyxl~=2.5.1
+robotframework
+robotframework-seleniumlibrary
+robotframework-excel

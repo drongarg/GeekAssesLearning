@@ -33,12 +33,12 @@ steps:
     npm install chromedriver
   displayName: 'pytest'
 
-- powershell: robot --pythonpath . Automation_Script/Scripts/Login.robot
+- powershell: robot --pythonpath . -x outputxunit.xml Automation_Script/Scripts/Login.robot
   displayName: 'LoginTestCase'
 
 - task: PublishTestResults@2
   inputs:
-    testResultsFiles: output.xml
+    testResultsFiles: outputxunit.xml
     searchFolder: 'D:\a\1\s\'
   condition: succeededOrFailed()
   displayName: 'Publish Test Results outputxunit.xml'

@@ -34,7 +34,7 @@ Login To Application
     Click Element    ${btn_login}
 
 Logout
-    Wait Until Element Is Visible    ${logo_signout}    20s
+    Wait Until Element Is Visible    ${logo_signout}    50s
     Click Element    ${logo_signout}
     sleep    2s
     Click Element    ${lnk_logout}
